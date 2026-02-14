@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<title>قلبي</title>
+
+<style>
+body{
+background:black;
+color:white;
+text-align:center;
+font-family:Arial;
+padding-top:40px;
+}
+
+button{
+padding:15px 25px;
+margin:10px;
+font-size:20px;
+border:none;
+border-radius:15px;
+background:#ff4d6d;
+color:white;
+cursor:pointer;
+}
+
+img{
+max-width:80%;
+margin-top:20px;
+border-radius:20px;
+box-shadow:0 0 25px pink;
+}
+
+#back{
+position:fixed;
+top:20px;
+left:20px;
+background:gray;
+}
+</style>
+</head>
+
+<body>
+
+<div id="menu">
+<h1>اختر قلبك ❤️</h1>
+<button onclick="start('mom')">أمي</button>
+<button onclick="start('sis1')">أختي</button>
+<button onclick="start('sis2')">أختي الأخرى</button>
+</div>
+
+<div id="viewer" style="display:none;">
+<button id="back" onclick="home()">رجوع</button>
+<h2 id="text"></h2>
+<img id="photo">
+<br><br>
+<button onclick="next()">التالي</button>
+</div>
+
+<script>
+
+let images=[];
+let texts=[];
+let index=0;
+
+function start(person){
+
+document.getElementById("menu").style.display="none";
+document.getElementById("viewer").style.display="block";
+
+if(person=="mom"){
+images=[
+"mom1.jpg","mom2.jpg","mom3.jpg","mom4.jpg","mom5.jpg","mom6.jpg","mom7.jpg","mom8.jpg","mom9.jpg",
+"mom10.jpg","mom11.jpg","mom12.jpg","mom13.jpg","mom14.jpg","mom15.jpg","mom16.jpg","mom17.jpg"
+];
+texts=new Array(images.length).fill("أنتِ الأمان الذي لا يتغير");
+}
+
+if(person=="sis1"){
+images=[
+"sis1_1.jpg","sis1_2.jpg","sis1_3.jpg","sis1_4.jpg","sis1_5.jpg","sis1_6.jpg","sis1_7.jpg",
+"sis1_8.jpg","sis1_9.jpg","sis1_10.jpg","sis1_11.jpg","sis1_12.jpg","sis1_13.jpg","sis1_14.jpg"
+];
+texts=new Array(images.length).fill("وجودك يجعل البيت أخف");
+}
+
+if(person=="sis2"){
+images=[
+"sis2_1.jpg","sis2_2.jpg","sis2_3.jpg","sis2_4.jpg","sis2_5.jpg","sis2_6.jpg","sis2_7.jpg","sis2_8.jpg","sis2_9.jpg"
+];
+texts=new Array(images.length).fill("ضحكتك جزء من راحتي");
+}
+
+index=0;
+show();
+}
+
+function show(){
+document.getElementById("photo").src=images[index];
+document.getElementById("text").innerHTML=texts[index];
+}
+
+function next(){
+index++;
+if(index>=images.length){
+document.body.innerHTML="<h1>أنتم عائلتي… وأنتم عالمي كله ❤️</h1><br><img src='family.jpg'>";
+}else{
+show();
+}
+}
+
+function home(){
+location.reload();
+}
+
+</script>
+
+</body>
+</html>
