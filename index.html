@@ -3,40 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <title>قلبي</title>
-
 <style>
-body{
-background:black;
-color:white;
-text-align:center;
-font-family:Arial;
-padding-top:40px;
-}
-
-button{
-padding:15px 25px;
-margin:10px;
-font-size:20px;
-border:none;
-border-radius:15px;
-background:#ff4d6d;
-color:white;
-cursor:pointer;
-}
-
-img{
-max-width:80%;
-margin-top:20px;
-border-radius:20px;
-box-shadow:0 0 25px pink;
-}
-
-#back{
-position:fixed;
-top:20px;
-left:20px;
-background:gray;
-}
+body{background:black;color:white;text-align:center;font-family:Arial;padding-top:40px;}
+button{padding:15px 25px;margin:10px;font-size:20px;border:none;border-radius:15px;background:#ff4d6d;color:white;cursor:pointer;}
+img{max-width:80%;margin-top:20px;border-radius:20px;box-shadow:0 0 25px pink;}
+#back{position:fixed;top:20px;left:20px;background:gray;}
 </style>
 </head>
 
@@ -64,30 +35,21 @@ let texts=[];
 let index=0;
 
 function start(person){
-
 document.getElementById("menu").style.display="none";
 document.getElementById("viewer").style.display="block";
 
 if(person=="mom"){
-images=[
-"mom1.jpg","mom2.jpg","mom3.jpg","mom4.jpg","mom5.jpg","mom6.jpg","mom7.jpg","mom8.jpg","mom9.jpg",
-"mom10.jpg","mom11.jpg","mom12.jpg","mom13.jpg","mom14.jpg","mom15.jpg","mom16.jpg","mom17.jpg"
-];
+images=["mom1.jpeg","mom2.jpeg","mom3.jpeg","mom4.jpeg","mom5.jpeg","mom6.jpeg","mom7.jpeg","mom8.jpeg","mom9.jpeg","mom10.jpeg","mom11.jpeg","mom12.jpeg","mom13.jpeg","mom14.jpeg","mom15.jpeg","mom16.jpeg","mom17.jpeg"];
 texts=new Array(images.length).fill("أنتِ الأمان الذي لا يتغير");
 }
 
 if(person=="sis1"){
-images=[
-"sis1_1.jpg","sis1_2.jpg","sis1_3.jpg","sis1_4.jpg","sis1_5.jpg","sis1_6.jpg","sis1_7.jpg",
-"sis1_8.jpg","sis1_9.jpg","sis1_10.jpg","sis1_11.jpg","sis1_12.jpg","sis1_13.jpg","sis1_14.jpg"
-];
+images=["sis1_1.jpg","sis1_2.jpg","sis1_3.jpg","sis1_4.jpg","sis1_5.jpg","sis1_6.jpg","sis1_7.jpg","sis1_8.jpg","sis1_9.jpg","sis1_10.jpg","sis1_11.jpg","sis1_12.jpg","sis1_13.jpeg","sis1_14.jpeg"];
 texts=new Array(images.length).fill("وجودك يجعل البيت أخف");
 }
 
 if(person=="sis2"){
-images=[
-"sis2_1.jpg","sis2_2.jpg","sis2_3.jpg","sis2_4.jpg","sis2_5.jpg","sis2_6.jpg","sis2_7.jpg","sis2_8.jpg","sis2_9.jpg"
-];
+images=["sis2_1.jpg","sis2_2.jpeg","sis2_3.jpg","sis2_4.jpg","sis2_5.jpg","sis2_6.jpg","sis2_7.jpg","sis2_8.jpg","sis2_9.jpeg"];
 texts=new Array(images.length).fill("ضحكتك جزء من راحتي");
 }
 
@@ -103,7 +65,7 @@ document.getElementById("text").innerHTML=texts[index];
 function next(){
 index++;
 if(index>=images.length){
-document.body.innerHTML="<h1>أنتم عائلتي… وأنتم عالمي كله ❤️</h1><br><img src='family.jpg'>";
+document.body.innerHTML="<h1>أنتم عائلتي… وأنتم عالمي كله ❤️</h1><br><img src='family.jpeg'>";
 }else{
 show();
 }
